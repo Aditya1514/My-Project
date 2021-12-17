@@ -16,3 +16,5 @@ select max(UnitPrice)as maximun,
  count(SalesOrderID) as Aditya,
  sum (LineTotal) as Aditya1
  from Sales.SalesOrderDetail
+
+ select *from [Production].[Location]
