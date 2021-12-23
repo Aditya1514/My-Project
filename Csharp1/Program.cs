@@ -22,16 +22,26 @@ namespace ConsoleApp3
             // Console.WriteLine(Name);
 
             //Arrays in C#
-            /* string[] Names = new string[3];
+            Console.WriteLine("Enter a Number");
+            string[] Names = new string[3];
              Names[0] = "Aditya";
              Names[1] = "keer";
              Names[2] = "Virat";
 
-             Console.WriteLine(Names[1]);*/
-            Console.WriteLine("Enter your Name");
+             if(Names[0])
+            {
+                Console.WriteLine("Aditya");
+            }
+             if(Names[1])
+            {
+                Console.WriteLine("keer");
+            }
+             if(Names[2])
+            {
+                Console.WriteLine("Virat");
+            }
 
-            int i = int.Parse(Console.ReadLine());
-            Console.WriteLine(i);
+            
         }
     }
 }
