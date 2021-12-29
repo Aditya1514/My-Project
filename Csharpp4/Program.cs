@@ -5,8 +5,8 @@ namespace Csharpp4
 {
     public class Employee
     {
-        public string firstName = "Aditya";
-        public string lastName = "Keer";
+        public string firstName ="Aditya";
+        public string lastName = "Keer" ;
 
         public virtual void PrintFullName()
         {
@@ -24,13 +24,13 @@ namespace Csharpp4
         {
             public override void PrintFullName()
             {
-               
+              
                 Console.WriteLine(firstName + " " + lastName + "- PartTime");
             }
         }
         public class TemporaryEmployee : Employee 
         {
-            public override void PrintFullName()
+            public override  void PrintFullName()
             {
                
                 Console.WriteLine(firstName+ " "+lastName + " -Temporary");
