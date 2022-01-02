@@ -2,33 +2,32 @@
 //Explicit Interface Implementation
 namespace Csharpp10
 {
-    interface I1Student
+  interface IEmployee
     {
         void ExpMethod1();
     }
-    interface I2Student
+  interface IEmployee1
     {
         void ExpMethod2();
     }
-    public class Program : I1Student, I2Student
+    
+  public class Program : IEmployee,IEmployee1
     {
-        void I1Student.ExpMethod1()
+        void IEmployee.ExpMethod1()
         {
-            Console.WriteLine("Aditya Keer");
+            Console.WriteLine("Badshah");
         }
-        void I2Student.ExpMethod2()
+
+        void IEmployee1.ExpMethod2()
         {
-            Console.WriteLine("AKS 1415");
+            Console.WriteLine("Shershah");
         }
-       public static void Main()
+        public static void Main()
         {
             Program P = new Program();
-            ((I1Student)P).ExpMethod1();
-            ((I2Student)P).ExpMethod2();
-
+            ((IEmployee)P).ExpMethod1();
+            ((IEmployee1)P).ExpMethod2();
         }
     }
-
-   
 } 
 
