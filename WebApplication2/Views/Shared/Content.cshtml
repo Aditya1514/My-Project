@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width = device -width" />
-    <title>Index</title>
+    <title>Content</title>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.6.0.js"></script>
     <script src="~/Scripts/umd/popper.js"></script>
@@ -25,49 +25,19 @@
             </li>
         </ul>
     </nav>
-    @{ 
-        string Result;
-        if(ViewBag.StudentMarks>=35)
-        {
-            Result = "Pass";
-        }
-        else
-        {
-            Result = "Fail";
-        }
-    }
-
-
     <div class=" container-fluid">
-        <table class=" table">
-            <tr>
-                <td>StudentId</td>
-                <td>@ViewBag.StudentId</td>
-            </tr>
-            <tr>
-                <td>StudentName</td>
-                <td>@ViewBag.StudentName</td>
-            </tr>
-            <tr>
-                <td>StudentMarks</td>
-                <td>@ViewBag.StudentMarks</td>
-            </tr>
-            <tr>
-                <td>Result</td>
-                <td>@ViewBag.Result</td>
-            </tr>
-            
-            
-
-
-
-            
-
-        </table>
-
+        <div class=" card">
+            <div class=" card-header">
+                <h1>III town</h1>
+            </div>
+            <div class=" card-body">
+                <p>Toll-free 01234567890</p>
+                <p>EmailId :adithyasai1522@gmail.com</p>
+            </div>
+        </div>
     </div>
- 
-
-
 </body>
 </html>
+
+
+

@@ -2,8 +2,7 @@ bin/
 obj/
 .vs/
 packages/
-Scripts/
-Content/
+scripts/
 
 
 
