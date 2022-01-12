@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Products can Buy here If You Want..</h2>
+
+@{
+    ViewBag.Product = "Hello";
+}
+
+@{ 
+    ViewBag.ListitemsTitle = "About";
+
+    Html.RenderPartial("Vieww");
+}
+
+@section SidebarOptions
+{
+    <a href=" #" class=" list-group-item">Phone</a>
+    <a href=" #" class=" list-group-item">Laptop</a>
+    <a href=" #" class=" list-group-item">Inventor</a>
+
+
+}

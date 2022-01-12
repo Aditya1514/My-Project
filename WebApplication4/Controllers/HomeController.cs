@@ -4,21 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebApplication2.Controllers
+namespace WebApplication4.Controllers
 {
-    public class AdminController : Controller
+    public class HomeController : Controller
     {
-        // GET: Admin
+        // GET: Home
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Content()
+        public ActionResult Contact()
         {
-            return View();
-        }
-        public ActionResult Contett()
-        {
+            ViewBag.Tollfree = "123-123-123";
+            ViewBag.PhnNumber = "7659952796";
             return View();
         }
     }

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+@{
+    //Partial View
+    ViewBag.ListTitle = "Products";
+   
+    Html.RenderPartial("Vieww");
+}
+
+<h2>About</h2>
+<h3>Hi everyone..</h3>
+@{
+    ViewBag.About = "Hai Im From About";
+}
+
