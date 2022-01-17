@@ -1,0 +1,32 @@
+﻿@Model List<WebApplication6.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+
+
+}
+    <a href="@Url.Action("Create","Products")">CreateProduct</a>
+<table class=" table">
+    <thead>
+        <tr>
+            <th>ProductId</th>
+            <th>ProductName</th>
+            <th>ProductRate</th>
+            <th>Productdate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td> <a href=" /Product/Details/@item.ProductName">@item.ProductName</a></td>
+                <td>@item.ProductRate</td>
+                <td>@item.Productdate</td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>
+

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Create</h2>
+
+<form action=" /Products/Create" method="post">
+    <div class=" form-group">
+        <label>ProductId</label>
+        <input type="text" id="txtProductId" class=" form-control" placeholder="Product Id" name="ProductId"/>
+    </div>
+    <br>
+    <div class=" form-group">
+        <label>ProductName</label>
+        <input type="text" id=" txtProductName" class=" form-control" placeholder="Product Name" name=" ProductName" />
+    </div>
+    <br>
+    <div class=" form-group">
+        <label>ProductRate</label>
+        <input type="text" id=" txtProductRate" class=" form-control" placeholder="Product Rate" name=" ProductRate" />
+    </div>
+    <br />
+    <button class="btn btn-success ">Submit</button>
+</form>
