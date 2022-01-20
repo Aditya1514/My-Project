@@ -1,0 +1,40 @@
+﻿@model List<WebApplication10.Models.Product>
+
+
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+  <a href="/Product/Create">Create Product</a>
+<h2>Products</h2> 
+<form class=" form-inline" action="/Product/index">
+    <label for="search">Search</label>
+    <input type="search" class="form-control" id="search" name="rand" placeholder="Search" value="@ViewBag.search" /><br />
+    <button class=" btn btn-primary" type="submit">GO</button>
+</form>
+<table class=" table">
+    <tr>
+        <th>ProductID</th>
+        <th>ProductName</th>
+        <th>Price</th>
+        <th>DateOfPurchase</th>
+        <th>CategoryID</th>
+        <th>BrandID</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@item.ProductName</td>
+            <td>@item.Price</td>
+            <td>@item.DateOfPurchase</td>
+            <td>@item.CategoryID</td>
+            <td>@item.BrandID</td>
+            <td>
+                <a href=" /Product/details/@item.ProductID">Details</a>
+            </td>
+        </tr>
+    }
+</table>
+
+
+
