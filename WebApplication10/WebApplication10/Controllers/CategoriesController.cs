@@ -9,6 +9,9 @@ namespace WebApplication10.Controllers
     public class CategoriesController : Controller
     {
         // GET: Categories
+
+
+        //Retriving all rows
         public ActionResult Index()
         {
             KingFirstDatabaseEntities db = new KingFirstDatabaseEntities();

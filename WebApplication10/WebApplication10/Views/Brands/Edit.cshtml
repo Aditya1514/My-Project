@@ -1,0 +1,27 @@
+﻿@model WebApplication10.Models.Brand
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Edit Brands</h2>
+
+<form action="/Brands/Edit/@Model.BrandID" method="post">
+        <div class="col-6">
+            <label for="BrandID">BrandID</label>
+            <input type="hidden" name="BrandID" value="@Model.BrandID" />
+            <input type="text" class="form-control" placeholder="Brand ID" id="BrandID" name="BrandID" value="@Model.BrandID" />
+        </div><br />
+        <div class="col-6">
+            <label for="BrandName">BrandName</label>
+            <input type="text" class="form-control" placeholder="Brand Name" id="BrandName" name="BrandName" value="@Model.BrandName" />
+        </div><br />
+
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a class="btn btn-danger" href="/Brands/index">Cancel</a>
+
+
+</form>
+
