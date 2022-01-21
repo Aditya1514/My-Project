@@ -31,7 +31,11 @@ namespace WebApplication10.Controllers
         //creating a row in a db [get]Method
         public ActionResult Create()
         {
+            //Creating a dynamic drop down//
 
+            KingFirstDatabaseEntities db = new KingFirstDatabaseEntities();
+            ViewBag.Categories = db.Categories.ToList();
+            ViewBag.Brands = db.Brands.ToList();
             return View();
         }
 
@@ -41,6 +45,15 @@ namespace WebApplication10.Controllers
         public ActionResult Create(Product P)
         {
             KingFirstDatabaseEntities db = new KingFirstDatabaseEntities();
+            //posting a image
+            if(Request.Files.Count >= 1)
+            {
+                var file = Request.Files[0];
+                var imgBytes = new Byte[file.ContentLength];
+                file.InputStream.Read(imgBytes, 0, file.ContentLength);
+                var base64String = Convert.ToBase64String(imgBytes, 0, imgBytes.Length);
+                P.Photo = base64String;
+            }
             db.Products.Add(P);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -68,6 +81,25 @@ namespace WebApplication10.Controllers
             existingProduct.BrandID = A.BrandID;
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        //Delete request
+         public ActionResult Delete(long id)
+        {
+            KingFirstDatabaseEntities db = new KingFirstDatabaseEntities();
+            Product existingProduct = db.Products.Where(temp => temp.ProductID == id).FirstOrDefault();
+            return View(existingProduct);
+        }
+
+        [HttpPost]
+         public ActionResult Delete (long id,Product A)
+        {
+            KingFirstDatabaseEntities db = new KingFirstDatabaseEntities();
+            Product existingProduct = db.Products.Where(temp => temp.ProductID == id).FirstOrDefault();
+            db.Products.Remove(existingProduct);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
     }
 }

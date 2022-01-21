@@ -13,6 +13,7 @@
 </form>
 <table class=" table">
     <tr>
+        <th>Image</th>
         <th>ProductID</th>
         <th>ProductName</th>
         <th>Price</th>
@@ -23,6 +24,7 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td><img src="data:image;base64,@item.Photo" width="100px" /></td>
             <td>@item.ProductID</td>
             <td>@item.ProductName</td>
             <td>@item.Price</td>
@@ -32,6 +34,7 @@
             <td>
                 <a href=" /Product/details/@item.ProductID">Details</a>
                 <a href=" /Product/edit/@item.ProductID">Edit</a>
+                <a href=" /Product/Delete/@item.ProductID">Delete</a>
             </td>
         </tr>
     }

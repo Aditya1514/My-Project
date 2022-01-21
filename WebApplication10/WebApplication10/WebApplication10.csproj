@@ -307,6 +307,7 @@
     <Content Include="Scripts\jquery-3.6.0.min.map" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Brands\Edit.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

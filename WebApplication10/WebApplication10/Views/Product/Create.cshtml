@@ -5,7 +5,7 @@
 }
 
 <h2>Create Product</h2>
-<form action="/Product/Create" method="post">
+<form action="/Product/Create" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="form-group col-6">
             <label for="ProductID">ProductID</label>
@@ -27,12 +27,28 @@
 
         <div class="form-group col-6">
             <label for="CategoryID">CategoryID</label>
-            <input type="number" class="form-control" placeholder="CategoryID" id="CategoryID" name="CategoryID" />
+            <select class="form-control" id="CategoryID" name="CategoryID">
+              <option value="">Please Select</option>
+                @foreach(var item in ViewBag.Categories)
+            {
+                <option value="item.CategoryID">@item.CategoryName</option>
+            }
+            </select>
         </div><br />
         <div class="form-group col-6">
             <label for="BrandID">BrandID</label>
-            <input type="number" class="form-control" placeholder="BrandID" id="BrandID" name="BrandID" />
+            <select class="form-control" id="BrandID" name="BrandID">
+                <option value="">Please Select</option>
+                @foreach(var item in ViewBag.Brands)
+            {
+                <option value="item.BrandID">@item.BrandName</option>
+            }
+            </select>
         </div><br />
+        <div class="form-group">
+            <label for="Image">Image</label>
+            <input type="file" class="form-control-file" id="Image" name="Photo"/>
+        </div>
     </div>
     <br />
 
