@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Create Product</h2>
+<form action="/Product/Create" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="form-group col-6">
+            <label for="ProductID">ProductID</label>
+            <input type="text" class="form-control" placeholder="Product ID" id="ProductID" name="ProductID" />
+        </div><br />
+        <div class="form-group col-6">
+            <label for="ProductName">ProductName</label>
+            <input type="text" class="form-control" placeholder="Product Name" id="ProductName" name="ProductName" />
+        </div><br />
+
+        <div class="form-group col-6">
+            <label for="Price">Price</label>
+            <input type="text" class="form-control" placeholder="Price" id="Price" name="Price" />
+        </div><br />
+        <div class="form-group col-6">
+            <label for="DateOfPurchase">DateOfPurchase</label>
+            <input type="date" class="form-control" placeholder="DateOfPurchase" id="DateOfPurchase" name="DateOfPurchase" />
+        </div><br />
+
+        <div class="form-group col-6">
+            <label for="CategoryID">CategoryID</label>
+            <input type="number" class="form-control" placeholder="CategoryID" id="CategoryID" name="CategoryID" />
+        </div><br />
+        <div class="form-group col-6">
+            <label for="BrandID">BrandID</label>
+            <input type="number" class="form-control" placeholder="BrandID" id="BrandID" name="BrandID" />
+        </div><br />
+        
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-success">Create</button>
+    <a class="btn btn-danger" href="/Product/index">Cancel</a>
+</form>
+
