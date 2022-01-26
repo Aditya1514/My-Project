@@ -35,7 +35,7 @@ namespace WebApplication13.Controllers
                 if(result.Succeeded)
                 {
                     //role
-                    userManager.AddToRole(user.Id, "Customer");
+                    //userManager.AddToRole(user.Id, "Customer");
 
                     //login
                     var authenticationManager = HttpContext.GetOwinContext().Authentication;
@@ -51,5 +51,34 @@ namespace WebApplication13.Controllers
 
             }
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(LoginViewModal A)
+        {
+            var appDbContext = new ApplicationDbContext();
+            var userStore = new ApplicationUserStore(appDbContext);
+            var userManager = new ApplicationUserManager(userStore);
+            var user = userManager.Find(A.UserName, A.Password);
+
+            if(user!= null)
+            {
+                //login
+                var authenticationManager = HttpContext.GetOwinContext().Authentication;
+                var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
+                return RedirectToAction("Index", "Home");
+
+            }
+            else
+            {
+                ModelState.AddModelError("My Error", "Invalid Data");
+                return View();
+            }
+        }
+
     }
+    
 }
