@@ -18,7 +18,6 @@ namespace WebApplication13.Models
         public Nullable<bool> Active { get; set; }
         public string Photo { get; set; }
 
-        public Nullable<decimal> Quantity { get; set; }
 
         public virtual Brand Brand { get; set; }
         public virtual Category Category { get; set; }
