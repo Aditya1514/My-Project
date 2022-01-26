@@ -28,9 +28,13 @@
                 </li>
             </ul>
         </div>
-        <div class=" col-3 text-white">
-            @ViewBag.Message
-        </div>
+        @if (User.Identity.IsAuthenticated == true)
+        {
+            <div class=" col-3 text-white">
+                Welcome to, @User.Identity.Name
+            </div>
+        }
+        
     </nav>
     <div class=" container-fluid">
         @RenderBody()
