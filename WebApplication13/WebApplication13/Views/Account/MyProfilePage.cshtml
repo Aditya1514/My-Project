@@ -1,0 +1,37 @@
+﻿@model WebApplication13.Identity.ApplicationUser
+@{
+    ViewBag.Title = "MyProfilePage";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>MyProfilePage</h2>
+
+<table class="table">
+    <tr>
+        <th>UserName</th>
+        <th>@Model.UserName</th>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <th>@Model.Email</th>
+    </tr>
+    <tr>
+        <th>Mobile</th>
+        <th>@Model.PhoneNumber</th>
+    </tr>
+    <tr>
+        <th>DateOfBirth</th>
+        <th>@Model.Birthday</th>
+    </tr>
+    <tr>
+        <th>City</th>
+        <th>@Model.City</th>
+    </tr>
+    <tr>
+        <th>Country</th>
+        <th>@Model.PLace</th>
+    </tr>
+
+</table>
+
+<a href="/home/index">BACK</a>

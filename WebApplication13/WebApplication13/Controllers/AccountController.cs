@@ -78,7 +78,20 @@ namespace WebApplication13.Controllers
                 return View();
             }
         }
-
+         public ActionResult LogOut()
+        {
+            var authenticationManager = HttpContext.GetOwinContext().Authentication;
+            authenticationManager.SignOut();
+            return RedirectToAction("Index","Home");
+        }
+        public ActionResult MyProfile()
+        {
+            var appDbContext = new ApplicationDbContext();
+            var userStore = new ApplicationUserStore(appDbContext);
+            var userManager = new ApplicationUserManager(userStore);
+           ApplicationUser appUser= userManager.FindById(User.Identity.GetUserId());
+            return View(appUser);
+        }
     }
     
 }
