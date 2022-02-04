@@ -1,0 +1,21 @@
+﻿@model List<AuthorWebApplication.Models.book>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>book_id</th>
+        <th>book_title</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.book_id</td>
+                    <td>@item.book_title</td>
+                </tr>
+            }
+</table>
