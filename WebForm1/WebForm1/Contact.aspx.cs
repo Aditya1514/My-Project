@@ -17,7 +17,7 @@ namespace WebForm1
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string message = string.Format("You said name is {0} and your age is {1}, and your email address is {2} your favorite sport is {3}", txtName.Text,txtAge.Text,txtEmail.Text,ddlSport.SelectedValue);
-               ltMessage.Text = message;
+              
         }
     }
 }

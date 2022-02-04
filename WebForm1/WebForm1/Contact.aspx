@@ -7,6 +7,7 @@
     <div>
         <label>Name</label>
         <asp:TextBox ID="txtName" runat="server"  />
+        <asp:RequiredFieldValidator runat="server" ID="rfvName" ControlToValidate="txtName" ErrorMessage="*" />
     </div>
      <div>
         <label>Email</label>
